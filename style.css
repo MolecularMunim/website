@@ -51,8 +51,40 @@ body {
 
 .intro-text p {
   margin-top: 5px;
+  margin-bottom: 10px;
   font-size: 1.1em;
   color: #555;
+}
+
+/* === Contact Buttons (Moved to Top) === */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-buttons button:hover {
+  background-color: #ddd;
+}
+
+.contact-buttons img {
+  height: 20px;
+  width: 20px;
 }
 
 /* === Tab Buttons === */
@@ -101,29 +133,6 @@ body {
   border-radius: 12px;
 }
 
-/* === Contact Buttons === */
-.contact-buttons {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.contact-buttons button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 10px 15px;
-  background-color: #eee;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.contact-buttons img {
-  height: 24px;
-}
-
 /* === Utility Classes === */
 .hidden {
   display: none;
@@ -135,7 +144,6 @@ body {
   margin-left: 5em;
   margin-right: 5em;
 }
-
 
 /* === Bullet List Section === */
 .bullets {
@@ -156,7 +164,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-
 ul {
   list-style-type: disc;
   padding-left: 1.2rem;
@@ -168,8 +175,41 @@ li {
 
 /* === Responsive Adjustments === */
 @media (max-width: 600px) {
-  .container {
+  .intro {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .contact-buttons {
+    justify-content: center;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+
+  #home p,
+  #home h3 {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .bullets {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content .two-images {
+    flex-direction: column;
+  }
+
+  .content .two-images img {
+    width: 100%;
+    height: auto;
   }
 }
