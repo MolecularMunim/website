@@ -17,41 +17,72 @@
     </div>
 
     <div class="tabs">
-      <button onclick="showSection('about')">About Me</button>
-      <button onclick="showSection('contact')">Contact Me</button>
-      <button onclick="showSection('services')">Services</button>
+      <button onclick="showSection('home')">About Me</button>
+      <button onclick="showSection('about')">My Career</button>
+      <button onclick="showSection('contact')">Get in touch!</button>
+	<!--
+      <button onclick="showSection('services')">Consulting/Tutoring</button>
+	-->
     </div>
 
-    <div class="content" id="about" class="hidden">
-      <img src="main-image.jpg" class="large" alt="Main" />
-      <div class="two-images">
-        <img src="sub-image1.jpg" alt="Sub 1" />
-        <img src="sub-image2.jpg" alt="Sub 2" />
+    <div class="content hidden" id="home" class="hidden">
+	<p>I specialise in transcriptomics and statistical genomics, using large-scale data to explore the molecular underpinnings of disease.</p>
+<p>Here are some of the areas I specialise in:<p>
+	<div class="bullets">
+  <div class="list-box">
+    <h4>Transcriptomics</h4>
+    <ul>
+      <li>Long-read RNA-sequencing</li>
+      <li>Next-generation sequencing</li>
+      <li>Protocol development</li>
+      <li>Data analysis</li>
+    </ul>
+  </div>
+  <div class="list-box">
+    <h4>Statistical Genomics</h4>
+    <ul>
+      <li>Genotyping QC</li>
+      <li>GWAS</li>
+      <li>Partitioned heritability</li>
+      <li>Generating reproducible pipelines</li>
+    </ul>
+  </div>
+</div>
+
+ 
+
+<p>I'm always happy to chat - get in touch to discuss possible collaborations, brainstorm ideas, or just talk about cool science!</p>
+    </div>
+
+    <div class="content hidden" id="about">
+	<h2>Here's a summary of my research career:</h2>
+      <img src="main.png" class="large" alt="Main" />
+	<h3>Starting out as a wet lab biologist, I've slowly transitioned into a more data-focused career. I'm pretty good at what I do, but I'm still learning!</h3>      <div class="two-images">
+        <img src="sub-image1.png" alt="skilltree" />
+        <img src="sub-image2.png" alt="Sub 2" />
       </div>
     </div>
 
     <div class="content hidden" id="contact">
       <div class="contact-buttons">
-        <button><img src="dept-logo.png" alt="Dept" />Department</button>
-        <button><img src="linkedin-logo.png" alt="LinkedIn" />LinkedIn</button>
-        <button><img src="bluesky-logo.png" alt="Bluesky" />Bluesky</button>
+	<button onclick="location.href='mailto:syed.husain.12@ucl.ac.uk'"><img src="Email_icon.png" alt="e-mail" />Email</button>	
+        <button onclick="location.href='https://profiles.ucl.ac.uk/103545-syed-munim-husain'"><img src="dept-logo.png" alt="Dept" /></button>
+       <button onclick="location.href='https://www.linkedin.com/in/syed22994/'"><img src="linkedin-logo.png" alt="LinkedIn" />LinkedIn</button>
+        <button onclick="location.href='https://bsky.app/profile/molecularmunim.bsky.social'"><img src="bluesky-logo.png" alt="Bluesky" />Bluesky</button>
       </div>
     </div>
-
+<!--
     <div class="content hidden" id="services">
       <h2>Consulting and Tutoring Services</h2>
       <p>- Academic and career mentoring for life sciences students</p>
       <p>- Manuscript and grant review</p>
       <p>- Data interpretation and analysis support</p>
-      <h3>Testimonials</h3>
-      <p>"Munim helped me clarify my research direction and boosted my confidence." – A. Student</p>
-      <p>"Great insights and practical advice for my fellowship application." – R. Postdoc</p>
     </div>
   </div>
-
+-->
   <script>
     function showSection(sectionId) {
-      const sections = ['intro', 'about', 'contact', 'services'];
+      const sections = ['home','about', 'contact', 'services'];
       sections.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.add('hidden');
