@@ -7,44 +7,58 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <div class="container">
-    <header>
-      <h1>Hi! I'm Munim</h1>
-      <p>I'm a molecular geneticist working on mental health. </p>
-    </header>
-   
+  <div class="panel">
+    <div class="intro" id="intro">
+      <img src="yourphoto.jpg" alt="Munim" />
+      <div class="intro-text">
+        <h1>Hi! I'm Munim</h1>
+        <p>I'm a molecular geneticist working on mental health</p>
+      </div>
+    </div>
 
-    <main>
-      <section id="about" class="about-section">
-        <img src="photo.jpg" alt="Person Name" class="profile-photo" />
-        <div class="about-text">
-          <p>
-            My work oscillates between transcriptomics and functional genomics, and I work with large datasets to understand molecular mechanisms of disease and risk. 
-          </p>
-          <p> Although I started out as a wet lab researcher, I've since moved onto a more data-focused career. I am experienced in bioinformatics and statistical genetics, with a big focus on RNA-sequencing, transcriptome annotation, and microarray-based variant profiling.</p>
-        </div>
-      </section>
+    <div class="tabs">
+      <button onclick="showSection('about')">About Me</button>
+      <button onclick="showSection('contact')">Contact Me</button>
+      <button onclick="showSection('services')">Services</button>
+    </div>
 
-      <section id="cv">
-        <h2>Curriculum Vitae</h2>
-        <p>
-          <a href="cv.pdf" target="_blank">Download CV (PDF)</a>
-        </p>
-      </section>
+    <div class="content" id="about" class="hidden">
+      <img src="main-image.jpg" class="large" alt="Main" />
+      <div class="two-images">
+        <img src="sub-image1.jpg" alt="Sub 1" />
+        <img src="sub-image2.jpg" alt="Sub 2" />
+      </div>
+    </div>
 
-      <section id="links">
-        <h2>Links</h2>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/syed22994/" target="_blank">LinkedIn</a></li>
-          <li><a href="https://profiles.ucl.ac.uk/103545-syed-munim-husain" target="_blank">Department Website</a></li>
-        </ul>
-      </section>
-    </main>
+    <div class="content hidden" id="contact">
+      <div class="contact-buttons">
+        <button><img src="dept-logo.png" alt="Dept" />Department</button>
+        <button><img src="linkedin-logo.png" alt="LinkedIn" />LinkedIn</button>
+        <button><img src="bluesky-logo.png" alt="Bluesky" />Bluesky</button>
+      </div>
+    </div>
 
-    <footer>
-      &copy; 2025 Person Name · All rights reserved
-    </footer>
+    <div class="content hidden" id="services">
+      <h2>Consulting and Tutoring Services</h2>
+      <p>- Academic and career mentoring for life sciences students</p>
+      <p>- Manuscript and grant review</p>
+      <p>- Data interpretation and analysis support</p>
+      <h3>Testimonials</h3>
+      <p>"Munim helped me clarify my research direction and boosted my confidence." – A. Student</p>
+      <p>"Great insights and practical advice for my fellowship application." – R. Postdoc</p>
+    </div>
   </div>
 
+  <script>
+    function showSection(sectionId) {
+      const sections = ['intro', 'about', 'contact', 'services'];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      });
+      const section = document.getElementById(sectionId);
+      if (section) section.classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
